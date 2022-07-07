@@ -1,0 +1,71 @@
+Create a class with PRIVATE fields, private method and a main method. Print the fields in main method. 
+Call the private method in main method.
+Create a sub class and try to access the private fields and methods from sub class.
+public class PrivateFieldsMethods {
+    private String name = "Sharan";
+    private int age = 21;
+    private void pvtMethod() {
+        System.out.println("My Name is " + name + " and my age is " + age);
+    }
+
+    public static void main(String[] args) {
+        PrivateFieldsMethods obj = new PrivateFieldsMethods();
+        System.out.println(obj.age);
+        System.out.println(obj.name);
+        obj.pvtMethod();
+    }
+}
+
+
+Create a class with DEFAULT fields and methods. Access these fields and methods from any other class in the same package
+class DefaultClass_02 {
+    int myAge;
+    String myName;
+    void defaultMethod() {
+        System.out.println("My name is " + myName + " and my age is " + myAge);
+    }
+}
+public class DefaultClassFieldsMethod {
+    public static void main(String[] args) {
+        DefaultClass_02 obj = new DefaultClass_02();
+        obj.myAge = 21;
+        obj.myName = "Sharan";
+        obj.defaultMethod();
+    }
+}
+
+
+Create a class with PROTECTED fields and methods. Access these fields and methods from any other class in the same package.
+Also, Access the PROTECTED fields and methods from child class located in a different package
+Access the PROTECTED fields and methods from any class in different package
+public class ProtectedClassFieldsMethod {
+    protected String name;
+    protected void protectedMethod() {
+        System.out.println("This is a " + name);
+    }
+}
+class protectedClass_03 {
+    public static void main(String[] args) {
+        ProtectedClassFieldsMethod pc = new ProtectedClassFieldsMethod();
+        pc.name = "Protected Method";
+        pc.protectedMethod();
+    }
+}
+
+
+Create a class with PUBLIC fields and methods.
+Access the public methods and fields from any class in the same package or different
+package.
+class PublicClass_04 {
+    public String pName = "Public";
+    public void publicMethod() {
+        System.out.println("This is " + pName);
+    }
+}
+public class PublicClassFieldsMethods {
+    public static void main(String[] args) {
+        PublicClass_04 pub = new PublicClass_04();
+        pub.pName = "Public Method";
+        pub.publicMethod();
+    }
+}
