@@ -54,8 +54,6 @@ class protectedClass_03 {
 
 
 Create a class with PUBLIC fields and methods.
-Access the public methods and fields from any class in the same package or different
-package.
 class PublicClass_04 {
     public String pName = "Public";
     public void publicMethod() {
@@ -67,5 +65,17 @@ public class PublicClassFieldsMethods {
         PublicClass_04 pub = new PublicClass_04();
         pub.pName = "Public Method";
         pub.publicMethod();
+    }
+}
+
+
+Access the public methods and fields from any class in the same package or different
+package.
+import com.jala.accessmodifiers.ProtectedClassFieldsMethod;
+public class AccessingProtectedFieldsMethod extends ProtectedClassFieldsMethod {
+    public static void main(String[] args) {
+        AccessingProtectedFieldsMethod sub = new AccessingProtectedFieldsMethod();
+        sub.name = "Protected Method in SubClass";
+        sub.protectedMethod();
     }
 }
