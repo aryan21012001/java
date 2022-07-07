@@ -1,0 +1,36 @@
+Create an interface with only one method and implement it in a class. Call the method implemented.
+interface Jala_01 {
+    void oneMethod();
+}
+public class InterfaceOneMethod implements Jala_01 {
+    public void oneMethod() {
+        System.out.println("This is a method");
+    }
+    public static void main(String[] args) {
+        InterfaceOneMethod if1 = new InterfaceOneMethod();
+        if1.oneMethod();
+    }
+}
+
+
+Create an interface with two methods, but implement only one in a class. Call the method implemented.
+interface Jala_02 {
+    void methodOne();
+    void methodTwo();
+}
+public class InterfaceTwoMethod implements Jala_02 {
+    public void methodOne() {
+        System.out.println("First Method");
+    }
+    public void methodTwo() {
+        System.out.println("Second Method");
+    }
+    public static void main(String[] args) {
+        InterfaceTwoMethod if2 = new InterfaceTwoMethod();
+        if2.methodOne();
+        if2.methodTwo();
+    }
+}
+
+
+Use Interface instances to call the implemented method in the implemented class
