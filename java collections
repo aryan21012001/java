@@ -1,0 +1,157 @@
+Create an ArrayList of type String with 10 string elements. Add 10 string elements to
+ArrayList and perform the below operations
+Add an element to the ArrayList
+Iterate through the ArrayList by using Iterator object
+Add an element at a specific index
+Remove an element from the ArrayList, Remove at an index
+Update the element at a specific index
+Check the element is present at a particular index
+Get an element at a particular index
+Find out the size of the ArrayList
+Check the given element is present in the ArrayList
+Remove all elements of the ArrayList
+
+import java.util.Arrays;
+import java.util.Iterator;
+public class ArrayList {
+    public static void main(String[] args) {
+        java.util.ArrayList<String> jala = new java.util.ArrayList<>(
+                Arrays.asList("zero", "one", "two", "three", "four", "five"));
+        System.out.println("\njala = " + jala);
+        jala.add("six");
+        jala.add("seven");
+        jala.add("eight");
+        jala.add("nine");
+        System.out.println("\nAfter adding elements :");
+        System.out.println("jala = " + jala);
+        Iterator<String> itr = jala.iterator();
+        System.out.println("\nIterating through the ArrayList : ");
+        while (itr.hasNext()) {
+            System.out.print(itr.next() + " ");
+        }
+        System.out.println(" ");
+        jala.add(1, "AtIndex1");
+        System.out.println("\nAfter adding an element at index 1 :");
+        System.out.println("jala = " + jala);
+        jala.remove(1);
+        System.out.println("\nAfter removing an element at index 1 :");
+        System.out.println("jala = " + jala);
+        jala.set(1, "ONE");
+        System.out.println("\nAfter updating the element at index 1 :");
+        System.out.println("jala = " + jala);
+        System.out.println("\nThe element is present at index :");
+        System.out.println(jala.indexOf("three"));
+        System.out.println("\nThe element at index 3 :");
+        System.out.println(jala.get(3));
+        System.out.println("\nSize of the ArrayList : ");
+        System.out.println(jala.size());
+        System.out.println("\n'two' is present in the ArrayList : ");
+        System.out.println(jala.contains("two")); //returns boolean value
+        System.out.println("\nAfter removing all elements of the ArrayList :");
+        jala.clear();
+        System.out.println("jala = " + jala);
+    }
+}
+
+
+
+Create a HashMap with at least 10 key value pairs of the Student ID and Name
+Insert a Key value mapping into the map
+Fetch the value of a Key
+Create a clone/copy of HashMap
+Check if the given Key is in the Map
+Check if the value is in the Map
+Check if the map is empty
+Print the size of the Map to the console
+Print all the Keys of the map to the console
+Print all the Keys of the map to the console
+Remove a specific Key-value pair
+Copy all the elements of the Map to another Map
+
+public class HashMap {
+    public static void main(String[] args) {
+        java.util.HashMap<Integer, String> jala = new java.util.HashMap<>();
+        //a. Inserting Student ID as Key & Name as value using put() method
+        jala.put(1, "Sharan");
+        jala.put(2, "Rohit");
+        jala.put(3, "Leo");
+        jala.put(4, "Keerthana");
+        jala.put(5, "Aditya");
+        jala.put(6, "Manoj");
+        jala.put(7, "Mahideep");
+        jala.put(8, "Prapul");
+        jala.put(9, "Dheeraj");
+        jala.put(10, "Rahul");
+        System.out.println("\nkey-value pairs of the Student ID and Name : ");
+        System.out.println("jala = " + jala);
+        System.out.println("\nName of the Student with ID no = 6 :");
+        System.out.println(jala.get(6));
+        System.out.println("\nclone/copy of HashMap jala : ");
+        System.out.println(jala.clone());
+        System.out.println("\nID No = 3 is in the Map : ");
+        System.out.println(jala.containsKey(3));
+        System.out.println("\nStudent Name = 'Sharan' is in the map :");
+        System.out.println(jala.containsValue("Sharan"));
+        System.out.println("\nChecking if the map is empty :");
+        System.out.println(jala.isEmpty());
+        System.out.println("\nThe size of the Map is :");
+        System.out.println(jala.size());
+        System.out.println("\nAll ID No of the students :");
+        System.out.println(jala.keySet());
+        System.out.println("\nRemoved ID no = 2 ,Student name = 'Rohit' : ");
+        jala.remove(2, "Rohit");
+        System.out.println(jala);
+        System.out.println("\nCopied all the elements of the jala to icfai :");
+        java.util.HashMap<Integer, String> icfai = new java.util.HashMap<>();
+        icfai.putAll(jala);
+        System.out.println("icfai = " + icfai);
+    }
+}
+
+
+
+Create a HashSet with at least 10 elements of type String
+Write program covering all the operations of HashSet
+
+import java.util.Iterator;
+//Java HashSet class is used to create a collection that uses a hash table for storage.
+public class HashSet {
+    public static void main(String[] args) {
+
+        java.util.HashSet<String> jala = new java.util.HashSet<>();
+        jala.add("zero");
+        jala.add("one");
+        jala.add("two");
+        jala.add("three");
+        jala.add("four");
+        jala.add("five");
+        jala.add("six");
+        jala.add("seven");
+        jala.add("eight");
+        jala.add("nine");
+        jala.add("ten");
+        jala.add("nine");
+        System.out.println("\nAfter adding elements to HashSet :");
+        System.out.println("jala = " + jala);
+        Iterator<String> itr = jala.iterator();
+        System.out.println("\nIterating through the HashSet : ");
+        while (itr.hasNext()) {
+            System.out.print(itr.next() + " ");
+        }
+        System.out.println(" ");
+        System.out.println("\nclone/copy of HashSet : ");
+        System.out.println(jala.clone());
+        jala.remove("zero");
+        System.out.println("\nAfter removing element 'zero' :");
+        System.out.println("jala = " + jala);
+        System.out.println("\nChecking if the set is empty :");
+        System.out.println(jala.isEmpty());
+        System.out.println("\nSize of the HashSet : ");
+        System.out.println(jala.size());
+        System.out.println("\nElement 'one' is present in the HashSet : ");
+        System.out.println(jala.contains("one")); //returns boolean value
+        System.out.println("\nAfter removing all elements of the HashSet :");
+        jala.clear();
+        System.out.println("jala = " + jala);
+    }
+}
