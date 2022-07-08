@@ -1,0 +1,88 @@
+Write a class with a default constructor, one argument constructor and two argument constructors.
+Instantiate the class to call all the constructors of that class from a main class
+class ParentClass_01 {
+    int rollNo;
+    String name;
+    String branch;
+    ParentClass_01() {
+        System.out.println("Student Details");
+    }
+    ParentClass_01(int rollNo) {
+        this.rollNo = rollNo;
+        System.out.println("Roll No : " + this.rollNo);
+    }
+    ParentClass_01(String name, String branch) {
+        this.name = name;
+        this.branch = branch;
+        System.out.println("Name : " + this.name);
+        System.out.println("Branch : " + this.branch);
+    }
+}
+public class DefaultOneTwoArgument {
+    public static void main(String... args) {
+        new ParentClass_01();
+        new ParentClass_01(317);
+        new ParentClass_01("Sharan", "CSE");
+    }
+}
+
+
+
+Call the constructors(both default and argument constructors) of super class from a child class
+class ChildClass_02 extends ParentClass_01 {
+    String clg;
+    String city;
+        super();
+    }
+    ChildClass_02(int rollNo) {
+        super(rollNo);
+    }
+    ChildClass_02(String name, String branch, String clg, String city) {
+        super(name, branch);
+        this.clg = clg;
+        this.city = city;
+        System.out.println("College : " + this.clg);
+    }
+}
+public class CallSuperFromChild {
+    public static void main(String... args) {s
+        new ChildClass_02();
+        new ChildClass_02(317);
+        new ChildClass_02("Sharan", "CSE", "ICFAI","Hyderabad");
+    }
+}
+
+
+
+Apply private, public, protected and default access modifiers to the constructor
+Write constructors with return type int and String
+Try to call the constructor multiple times with the same object
+public class PublicPrivateProtectedDefault {
+    int rollNo;
+    String name;
+    String clg;
+    String city;
+    {System.out.println("Student Details");}
+    PublicPrivateProtectedDefault() {
+        this(11);
+    }
+    public PublicPrivateProtectedDefault(int rollNo) {
+        this("Sharan");
+        this.rollNo = rollNo;
+        System.out.println("rollNo : " + rollNo);
+    }
+    private PublicPrivateProtectedDefault(String name) {
+        this("ICFAI", "Hyderabad");
+        this.name = name;
+        System.out.println("Name : " + name);
+    }
+    protected PublicPrivateProtectedDefault(String clg, String city) {
+        this.clg = clg;
+        this.city = city;
+        System.out.println("college : " + clg);
+        System.out.println("City : " + city);
+    }
+    public static void main(String[] args) {
+        PublicPrivateProtectedDefault c = new PublicPrivateProtectedDefault();
+    }
+}
