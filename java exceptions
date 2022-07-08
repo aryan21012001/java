@@ -1,0 +1,258 @@
+Write a program to generate Arithmetic Exception without exception handling
+Handle the Arithmetic exception using try-catch block
+public class ArithmeticExceptionTryCatch {
+    public static void main(String[] args) {
+        int a = 10, b = 0, c;
+        try {
+            System.out.println("Inside try block");
+            c = a / b;
+            System.out.println("c = " + c);
+        }
+        catch (java.lang.ArithmeticException e) {
+            System.out.println("Handling the Arithmetic exception using try-catch block");
+        }
+        c = a / b;
+        System.out.println("without exception handling");
+    }
+}
+
+
+  Write a method which throws exception, Call that method in main class without try block
+  static void exam(int marks) throws InvalidExamException {
+        if (marks < 40) {
+            throw new InvalidExamException("Failed in exam");
+        } else {
+            System.out.println("Passed in exam");
+        }
+    }
+    public static void main(String[] args) {
+        try {
+            //passing marks to the method
+            exam(39);
+        } catch (Exception i) {
+            i.printStackTrace();
+        }
+    }
+}
+
+
+Write a program with multiple catch blocks
+public class MultipleCatchBlocks {
+    public static void main(String[] args) {
+        try {
+            int[] a = new int[6];
+            a[6] = 10 / 0;
+            System.out.println(a[10]);
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Arithmetic Exception occurs");
+            e.getStackTrace();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndexOutOfBounds Exception occurs");
+            e.getStackTrace();
+        } catch (Exception e) {
+            System.out.println("Parent Exception occurs");
+            e.getStackTrace();
+        }
+        System.out.println("Main method ended");
+    }
+}
+
+
+Write a program to throw exception with your own message
+public class MethodThrowsException {
+    static void throwException() {
+        throw new RuntimeException("Throwing exception");
+    }
+
+    public static void main(String[] args) {
+        throwException();
+    }
+}
+
+
+Write a program to create your own exception
+class InvalidExamException extends Exception {
+    InvalidExamException(String msg) {
+        System.out.println(msg);
+    }
+}
+public class CreateOwnException {
+    static void exam(int marks) throws InvalidExamException {
+        if (marks < 40) {
+            throw new InvalidExamException("Failed in exam");
+        } else {
+            System.out.println("Passed in exam");
+        }
+    }
+    public static void main(String[] args) {
+        try {
+            exam(39);
+        } catch (Exception i) {
+            i.printStackTrace();
+        }
+    }
+}
+
+
+Write a program with finally block
+public class FinallyBlock {
+    public static void main(String args[]) {
+        try {
+            int data = 10 / 0;
+            System.out.println(data);
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Exception handled");
+            e.printStackTrace();
+        }
+        finally {
+            System.out.println("finally block is always executed");
+        }
+        System.out.println("Main method ended");
+    }
+}
+
+
+Write a program to generate Arithmetic Exception]
+public class GenerateArithmeticException {
+    public static void main(String[] args) {
+        int a = 10, b = 0, c;
+        try {
+            c = a / b;
+        } catch (ArithmeticException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+Write a program to generate ArrayIndexOutOfBoundException
+public static void main(String[] args) {
+        String[] arr = {"Sharan", "Rahul", "Leo", "Arun"};
+        try {
+            System.out.println(arr[5]);
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            System.err.println("ArrayIndexOutOfBoundsException caught");
+            e.printStackTrace();
+        }
+    }
+}
+
+
+Write a program to generate ClassNotfoundException
+public class ClassNotFound {
+    public static void main(String[] args) {
+        try {
+            Class.forName("com.exceptions.jala");
+            ClassLoader.getSystemClassLoader().loadClass("com.exceptions.jala");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+Write a program to generate FileNotFoundException
+import java.io.*;
+public class FileNotFound {
+    public static void main(String[] args) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(new File("/invalid/file/location")));
+        }
+        catch (FileNotFoundException e) {
+            System.err.println("FileNotFoundException caught!");
+            e.printStackTrace();
+        }
+    }
+}
+
+
+Write a program to generate IOException
+import java.io.*;
+public class GenerateIOException {
+    public static void main(String[] args) {
+        File file = new File("test.txt");
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(file);
+            fis.read();
+            fis.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+Write a program to generate NoSuchMethodException
+import java.lang.reflect.Method;
+class E_14 {
+    public void addition(int a, int b) {
+        int c;
+        c = a + b;
+        System.out.println(c);
+    }
+}
+public class NoSuchMethod {
+    public static void main(String[] args) {
+        try {
+            Class c = Class.forName("com.jala.exceptions.E_14");
+            Method m = c.getDeclaredMethod("subtraction", int.class, int.class);
+        }
+        catch (NoSuchMethodException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+Write a program to generate NullPointerException
+public class NullPointer {
+    static void simpleNullCheck(String str) {
+        System.out.println(str.length());
+    }
+    public static void main(String args[]) {
+        String input = null;
+        try {
+            simpleNullCheck(input);
+        } catch (NullPointerException e) {
+            System.out.println("NullPointerException caught!");
+            e.printStackTrace();
+        }
+    }
+}
+
+
+Write a program to generate NumberFormatException
+public class NumberFormat {
+    public static void main(String[] args) {
+        String str = "111ABC";
+        try {
+            int x = Integer.parseInt(str);
+            int y = Integer.valueOf(str);
+        } catch (NumberFormatException e) {
+            System.err.println("NumberFormatException caught!");
+            e.printStackTrace();
+        }
+    }
+}
+
+
+Write a program to generate StringIndexOutOfBoundsException
+public class StringIndexOutOfBonds {
+    public static void main(String[] args) {
+        String str = "Sharan";
+        try {
+            char charAtNegativeIndex = str.charAt(-1);
+            char charAtLengthIndex = str.charAt(11);
+        } catch (StringIndexOutOfBoundsException e) {
+            System.err.println("StringIndexOutOfBoundsException caught");
+            e.printStackTrace();
+        }
+    }
+}
+
+
