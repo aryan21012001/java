@@ -33,4 +33,112 @@ public class InterfaceTwoMethod implements Jala_02 {
 }
 
 
-Use Interface instances to call the implemented method in the implemented class
+Create two interfaces with one method each. Implement these two interfaces in one class.
+interface Jala_4 {
+    void methodOne();
+}
+interface Jala_04 {
+    void methodTwo();
+}
+public class TwoInterfaceOneMethod implements Jala_4, Jala_04 {
+    public void methodOne() {
+        System.out.println("This is Method one");
+    }
+    public void methodTwo() {
+        System.out.println("This is Method two");
+    }
+    public static void main(String[] args) {
+        TwoInterfaceOneMethod if4 = new TwoInterfaceOneMethod();
+        if4.methodOne();
+        if4.methodTwo();
+    }
+}
+
+
+Create two interfaces with the same method (same signature) in both the interfaces.
+Implement these two interfaces in one class. Call the method.
+interface Jala_5 {
+    void sameMethod();
+}
+interface Jala_05 {
+    void sameMethod();
+}
+class TwoInterfaceSameMethod implements Jala_5, Jala_05 {
+    public void sameMethod() {
+        System.out.println("This is same method in both the interfaces");
+    }
+    public static void main(String[] args) {
+        TwoInterfaceSameMethod if5 = new TwoInterfaceSameMethod();
+        if5.sameMethod();
+    }
+}
+
+
+Create an interface with a default method and implement it in a class. Do not provide implementation to the default method and call the method.
+default void defaultMethod() {
+        System.out.println("This is a default method");
+    }
+}
+class InterfaceDefaultMethod implements Jala_06 {
+    public static void main(String[] args) {
+        InterfaceDefaultMethod if6 = new InterfaceDefaultMethod();
+        if6.defaultMethod();
+    }
+}
+
+
+Create an interface and inherit it from the other interface.
+interface Jala_7 {
+    void methodOne();
+}
+interface Jala_07 extends Jala_7 {
+    void methodTwo();
+}
+class InheritedInterface implements Jala_07 {
+    @Override
+    public void methodOne() {
+        System.out.println("This is first method");
+    }
+    public void methodTwo() {
+        System.out.println("This is second method");
+    }
+    public static void main(String[] args) {
+        InheritedInterface if7 = new InheritedInterface();
+        if7.methodOne();
+        if7.methodTwo();
+    }
+}
+
+
+Create a PUBLIC interface with fields and methods, fields should have values assigned.
+Implement this interface to some class and print the values of the interface fields and call the interface methods
+public interface InterfacePublicFieldsMethod {
+    int num = 111; //values assigned
+    public void myMethod();
+}
+class Jala_08 implements InterfacePublicFieldsMethod {
+    public void myMethod() {
+        System.out.println("This is a method");
+    }
+    public static void main(String[] args) {
+        Jala_08 j = new Jala_08();
+        System.out.println(num);
+        j.myMethod();
+    }
+}
+
+
+Create a PRIVATE or PROTECTED interface and print the values as above scenario
+Create an interface with private, public and protected fields.
+Create an interface with static final variable
+interface Jala_09 {
+    public int num1 = 11;
+    static final int num2 = 22;
+    final int num3 = 33;
+}
+class InterfacePrivateProtected implements Jala_09 {
+    public static void main(String[] args) {
+        InterfacePrivateProtected if9 = new InterfacePrivateProtected();
+        System.out.println(if9.num1 + " " + if9.num2);
+    }
+}
